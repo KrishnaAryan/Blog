@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <div>
+            <h2>Upload Data</h2>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

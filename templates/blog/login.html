@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <div>
+            <h1>Login</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Login</button>
+            </form>
+            <a href="{% url 'register' %}">Create an account</a>
+        </div>
+    </div>
+{% endblock %}
