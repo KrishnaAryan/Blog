@@ -16,8 +16,9 @@ def post_detail(request, post_id):
     post = get_object_or_404(BlogPost, pk=post_id)
     return render(request, 'blog/post_detail.html', {'post': post})
 
-@login_required
+@login_required(login_url='login')
 def create_post(request):
+    form = BlogPostForm() 
     if request.method == 'POST':
         form = BlogPostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -25,9 +26,9 @@ def create_post(request):
             post.author = request.user  
             post.save()  
             return redirect('home')  
-        form = BlogPostForm()
     
     return render(request, 'blog/create_post.html', {'form': form})
+
 
 
 
