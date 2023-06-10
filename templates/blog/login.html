@@ -4,14 +4,14 @@
 
 {% block content %}
     <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-        <div>
-            <h1>Login</h1>
-            <form method="post">
+        <div style="background-color: #f2f2f2; padding: 20px; border-radius: 10px;">
+            <h1 style="text-align: center; color: #333; margin-bottom: 20px;">Login</h1>
+            <form method="post" style="text-align: center;">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit">Login</button>
+                <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 5px; cursor: pointer; margin-bottom: 10px;">Login</button>
             </form>
-            <a href="{% url 'register' %}">Create an account</a>
+            <a href="{% url 'register' %}" style="text-align: center; color: #333; display: block; text-decoration: none;">Create an account</a>
         </div>
     </div>
 {% endblock %}

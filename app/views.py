@@ -1,6 +1,5 @@
 
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import BlogPost
 from .forms import BlogPostForm
@@ -63,3 +62,6 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'blog/register.html', {'form': form})
+
+
+

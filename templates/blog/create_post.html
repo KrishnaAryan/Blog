@@ -4,12 +4,12 @@
 
 {% block content %}
     <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-        <div>
-            <h2>Upload Data</h2>
-            <form method="POST" enctype="multipart/form-data">
+        <div style="background-color: #f2f2f2; padding: 20px; border-radius: 10px;">
+            <h2 style="text-align: center; color: #333;">Post Blog</h2>
+            <form method="POST" enctype="multipart/form-data" style="text-align: center;">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit">Upload</button>
+                <button type="submit" style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 5px; cursor: pointer;">Upload</button>
             </form>
         </div>
     </div>

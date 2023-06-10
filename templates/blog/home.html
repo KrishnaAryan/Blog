@@ -41,6 +41,7 @@
             <img class="card-img-top" src="{% static 'path/to/placeholder-image.jpg' %}" alt="Card image cap">
     {% endif %}
         <div class="card-body">
+            Author: {{ post.author }}
             <h5 class="card-title">{{ post.title }}</h5>
             <p class="card-text">{{ post.content }}</p>
             <a href="{% url 'post_detail' post.id %}" class="btn btn-primary">Read More</a>
